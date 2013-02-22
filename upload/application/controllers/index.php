@@ -35,21 +35,28 @@ class Index extends CI_Controller {
 			$this->upload->display_errors('<stronng>', '</stronng>');
 			$error = $this->upload->display_errors();
 		} else {
-			$data = $this->upload->data();
-			$msg = '上传成功！';
-			$error = 'null';
+ 			$data = $this->upload->data();
+// 			$msg = '上传成功！';
+// 			$error = 'null';
 			$fileName = $this->root_path . $uploadDir . '/' . $data['file_name'];
 		}
 		
-		$ret = '{';
-		$ret .= "	error:\"{$error}\",";
-		$ret .= "	msg:\"{$msg}\",";
-		$ret .= "	data:\"{$fileName}\",";
-		$ret .= "	width:{$data['image_width']},";
-		$ret .= "	height:{$data['image_height']}";
-		$ret .= '}';
+// 		$ret = '{';
+// 		$ret .= "	error:\"{$error}\",";
+// 		$ret .= "	msg:\"{$msg}\",";
+// 		$ret .= "	data:\"{$fileName}\",";
+// 		$ret .= "	width:{$data['image_width']},";
+// 		$ret .= "	height:{$data['image_height']}";
+// 		$ret .= '}';
 		
 		$result = $this->exceladapter->ParseExcel($fileName);
+		$result = $this->exceladapter->RemoveNull($result);
+		for($i=0; $i<count($result); $i++)
+		{
+			$result[$i]['date'] = '2013-02-01';
+		}
+// 		$this->load->model('pay');
+// 		$this->pay->create($result);
 	}
 }
 

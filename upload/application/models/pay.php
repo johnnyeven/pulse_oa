@@ -30,7 +30,18 @@ class Pay extends CI_Model implements ICrud {
 	{
 		if(!empty($row))
 		{
-			return $this->db->insert($this->accountTable, $row);
+			if(count($row) > 1)
+			{
+				for($i=0; $i<count($row); $i++)
+				{
+					$this->db->insert($this->accountTable, $row[$i]);
+				}
+				return true;
+			}
+			else
+			{
+				return $this->db->insert($this->accountTable, $row);
+			}
 		}
 		else
 		{

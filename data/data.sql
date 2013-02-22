@@ -2,12 +2,15 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
+DROP SCHEMA IF EXISTS `oa_db` ;
 CREATE SCHEMA IF NOT EXISTS `oa_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 USE `oa_db` ;
 
 -- -----------------------------------------------------
 -- Table `oa_db`.`platform_account`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `oa_db`.`platform_account` ;
+
 CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_account` (
   `account_id` INT NOT NULL AUTO_INCREMENT ,
   `account_number` INT NOT NULL ,
@@ -24,6 +27,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `oa_db`.`platform_pay`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `oa_db`.`platform_pay` ;
+
 CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_pay` (
   `date` DATE NOT NULL ,
   `account_id` INT NOT NULL ,
@@ -31,6 +36,7 @@ CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_pay` (
   `account_department` CHAR(16) NOT NULL ,
   `pay_base` INT NOT NULL ,
   `pay_gangwei` INT NOT NULL ,
+  `pay_jingtie` INT NOT NULL ,
   `pay_gongling` INT NOT NULL ,
   `pay_baomi` INT NOT NULL ,
   `pay_canbu` INT NOT NULL ,
