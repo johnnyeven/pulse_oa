@@ -48,15 +48,24 @@ class Index extends CI_Controller {
 // 		$ret .= "	width:{$data['image_width']},";
 // 		$ret .= "	height:{$data['image_height']}";
 // 		$ret .= '}';
+// 		exit($ret);
 		
 		$result = $this->exceladapter->ParseExcel($fileName);
 		$result = $this->exceladapter->RemoveNull($result);
+		
+		$this->load->model('account');
 		for($i=0; $i<count($result); $i++)
 		{
 			$result[$i]['date'] = '2013-02-01';
+			$row = array(
+				'account_name'		=>	$result[$i]['account_name'],
+				'account_department'=>	$result[$i]['account_department']
+			);
+			$result[$i]['account_id'] = $this->account->create($row);
 		}
-// 		$this->load->model('pay');
-// 		$this->pay->create($result);
+		
+		$this->load->model('pay');
+		$this->pay->create($result);
 	}
 }
 

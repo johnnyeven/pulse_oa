@@ -30,7 +30,7 @@ class Pay extends CI_Model implements ICrud {
 	{
 		if(!empty($row))
 		{
-			if(count($row) > 1)
+			if(count($row) > 1 && is_array($row[0]))
 			{
 				for($i=0; $i<count($row); $i++)
 				{
