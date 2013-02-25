@@ -26,12 +26,22 @@ class Account extends CI_Model implements ICrud {
 		return $this->db->count_all_results($this->accountTable);
 	}
 	
-	public function create($row)
+	public function create($row, $autoCreatePass = FALSE)
 	{
 		if(!empty($row))
 		{
-			$this->db->insert($this->accountTable, $row);
-			return $this->db->insert_id();
+			if($autoCreatePass)
+			{
+				$row['account_pass'] = $this->encrypt_pass('123456');
+			}
+			if($this->db->insert($this->accountTable, $row))
+			{
+				return $this->db->insert_id();
+			}
+			else
+			{
+				return -1;
+			}
 		}
 		else
 		{
@@ -88,6 +98,11 @@ class Account extends CI_Model implements ICrud {
 		{
 			return false;
 		}
+	}
+	
+	private function encrypt_pass($pass) {
+		$this->load->helper('security');
+		return encrypt_pass($pass);
 	}
 }
 

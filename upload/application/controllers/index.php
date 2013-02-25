@@ -56,12 +56,18 @@ class Index extends CI_Controller {
 		$this->load->model('account');
 		for($i=0; $i<count($result); $i++)
 		{
-			$result[$i]['date'] = '2013-02-01';
+			$result[$i]['date'] = '2013-02-02';
 			$row = array(
 				'account_name'		=>	$result[$i]['account_name'],
 				'account_department'=>	$result[$i]['account_department']
 			);
-			$result[$i]['account_id'] = $this->account->create($row);
+			$result[$i]['account_id'] = $this->account->create($row, TRUE);
+			
+			if($result[$i]['account_id'] == -1)
+			{
+				$accountResult = $this->account->read($row);
+				$result[$i]['account_id'] = $accountResult[0]->account_id;
+			}
 		}
 		
 		$this->load->model('pay');
