@@ -19,6 +19,8 @@ class Render extends CI_Model
 	
 	public function render($pageName = null, $data = null)
 	{
+		$this->load->helper('url');
+		
 		$header = $this->load->view('std_header', $data, true);
 		$top = $this->load->view('std_top', $data, true);
 		$nav = $this->load->view('std_nav', $data, true);

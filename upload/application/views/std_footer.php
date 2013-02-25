@@ -1,10 +1,10 @@
 		<div id="footer">
 			<p class="mid">
-				<a href="#" title="Top" class="tooltip">Top</a>&middot;<a href="#" title="Main Page" class="tooltip">Home</a>&middot;<a href="#" title="Change current settings" class="tooltip">Settings</a>&middot;<a href="#" title="End administrator session" class="tooltip">Logout</a>
+				<a href="#" title="回到顶部" class="tooltip">回到顶部</a>&middot;<a href="#" title="首页" class="tooltip">首页</a>&middot;<a href="#" title="设置" class="tooltip">设置</a>&middot;<a href="#" title="退出登录" class="tooltip">退出</a>
 			</p>
 			<p class="mid">
 				<!-- Change this to your own once purchased -->
-				&copy; Wide Admin 2010. All rights reserved.
+				&copy; Johnny Booster 2013. 遵循LGPL开源协议. 可免费用于商业发布.
 				<!-- -->
 			</p>
 		</div>

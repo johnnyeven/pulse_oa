@@ -1,7 +1,7 @@
 				<div id="top">
 					<!-- Logo -->
 					<div class="logo"> 
-						<a href="#" title="Administration Home" class="tooltip"><img src="assets/logo.png" alt="Wide Admin" /></a> 
+						<a href="#" title="Administration Home" class="tooltip"><img src="<?php echo site_url("resources/assets/logo.png"); ?>" alt="Wide Admin" /></a> 
 					</div>
 					<!-- End of Logo -->
 					

@@ -151,7 +151,7 @@ INPUT[type="checkbox"], INPUT[type="radio"] {
 
 #container {
 	min-width:960px;
-	max-width:1600px;
+	width:100%;
 	margin:0 auto;
 }
 
@@ -399,6 +399,7 @@ ul.nav li li a {
 #content {
 	float:right;
 	width:100%;
+	min-height:500px;
 	margin-left:-320px;
 	position:relative;
  	background:url('../assets/siderep.png') 185px 0 repeat-y;
@@ -415,8 +416,7 @@ ul.nav li li a {
 .pad20 {
 	display:block;
 	min-width:590px;
-	max-width:1230px;
-	padding:10px 20px;
+	padding:10px 0;
 }
 
 #content ul.dash {
@@ -498,7 +498,8 @@ table.fullwidth td, table.normal td {
 #columns .cols2 {
 	display:block;
 	float:left;
-	width:50%;
+	width:48%;
+	padding:10px;
 } 
 
 #columns .cols3 {

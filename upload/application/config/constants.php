@@ -18,6 +18,8 @@ define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0777);
 
+define('MESSAGE_TYPE_SUCCESS', 0xA001);
+define('MESSAGE_TYPE_ERROR', 0xA003);
 /*
 |--------------------------------------------------------------------------
 | File Stream Modes

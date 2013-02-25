@@ -1,6 +1,17 @@
 body {
-	 background:#fff url('../assets/repgray2.png') 0 0 repeat-x;
+	 background:#202020 url('../assets/repgray2.png') 0 0 repeat-x;
 }
+
+#bgwrap {background:#FFF;}
+
+#content a, #content a:visited {color:#666;}
+#content a:hover {color:#FFF;background-color:#666;}
+
+.message a, .message a:visited {color:#000;text-decoration:none;margin:0 3px;}
+.message a:hover {text-decoration:underline;}
+
+span.color_red {color:#F00;!important}
+span.color_green {color:#0D0;!important}
 
 h1, h2, h3, h4, h5, h6 {
 	color:#777;
@@ -112,18 +123,18 @@ ul.nav li li a:hover {
 }
 
 #sidebar ul li {
-	 border-bottom:1px dashed #eee;
- background:url('../assets/arrow_left.png') 5px 8px no-repeat;
+	border-bottom:1px dashed #eee;
+ 	background:url('../assets/arrow_left.png') 5px 12px no-repeat;
 }
 
 #sidebar ul li:hover {
- background:url('../assets/arrow_left_hover.png') 5px 8px no-repeat;
+ background:url('../assets/arrow_left_hover.png') 5px 12px no-repeat;
 }
 
 #sidebar ul li a {
  text-decoration:none;
  color:#555;
- font-size:11px;
+ font-size:12px;
 }
 
 #sidebar ul li a:hover {
@@ -132,16 +143,17 @@ ul.nav li li a:hover {
 
 #footer {
 	 background:#202020;
- border-top:3px solid #000;
+ 	border-top:5px solid #777;
 }
 
 ul.dash li a {
-	 color:#555;
+	 color:#555!important;
  background:url('../assets/largebut.png') 0 0 no-repeat;
 }
 
 
 ul.dash li a:hover {
+	background-color:transparent!important;
  background:url('../assets/largebut_hover.png') 0 0 no-repeat;
 }
 
@@ -158,9 +170,17 @@ table.fullwidth thead tr, table.normal thead tr {
  color:#fff;
 }
 
+table.fullwidth td a, table.fullwidth td a:visited, table.normal td a, table.normal td a:visited {
+	color:#666;
+}
+
+table.fullwidth td a:hover, table.normal td a:hover {
+	color:#FFF;
+	background-color:#666;
+}
+
 table.fullwidth tr, table.normal tr {
  color:#999;
- cursor:pointer;
 }
 
 table.fullwidth tr.odd, table.normal tr.odd {
@@ -176,6 +196,13 @@ table.fullwidth thead tr:hover, table.normal thead tr:hover {
  color:#fff;
 }
 
+table.fullwidth tbody tr:hover, table.normal tbody tr:hover {
+ background-color:#DDEFFF;
+}
+
+table.fullwidth tbody tr.child:hover, table.normal tbody tr.child:hover {
+ background-color:transparent;
+}
 
 .ui-sortable-placeholder {
 	background:#ffffcc!important;
@@ -232,9 +259,9 @@ table.fullwidth thead tr:hover, table.normal thead tr:hover {
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #fff; outline: none; text-decoration: none; }
 
 
-.ui-state-highlight, .ui-widget-content .ui-state-highlight {border: 1px solid #fcefa1; background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.html) 50% 50% repeat-x; color: #363636; }
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {border: 1px solid #fcefa1; background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x; color: #363636; }
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a { color: #363636; }
-.ui-state-error, .ui-widget-content .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(images/ui-bg_glass_95_fef1ec_1x400.html) 50% 50% repeat-x; color: #cd0a0a; }
+.ui-state-error, .ui-widget-content .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x; color: #cd0a0a; }
 .ui-state-error a, .ui-widget-content .ui-state-error a { color: #cd0a0a; }
 .ui-state-error-text, .ui-widget-content .ui-state-error-text { color: #cd0a0a; }
 .ui-state-disabled, .ui-widget-content .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
@@ -438,8 +465,8 @@ table.fullwidth thead tr:hover, table.normal thead tr:hover {
 .ui-corner-left { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; }
 .ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 
-.ui-widget-overlay { background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.html) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
-.ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.html) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+.ui-widget-overlay { background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+.ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; }
 
 
 .ui-accordion .ui-accordion-header { cursor: pointer; position: relative; margin-top: 1px; }
@@ -451,7 +478,7 @@ table.fullwidth thead tr:hover, table.normal thead tr:hover {
 .ui-accordion .ui-accordion-content-active { display: block; }
 
 
-.ui-datepicker { width: auto; padding: .2em .2em 0; }
+.ui-datepicker { padding: .2em .2em 0; }
 .ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
 .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
 .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
