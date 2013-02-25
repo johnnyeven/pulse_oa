@@ -23,6 +23,8 @@ class Message extends CI_Controller
 	
 	public function index()
 	{
+		$this->load->helper('url');
+		
 		$type = $this->input->get_post('type', TRUE);
 		$info = $this->input->get_post('info', TRUE);
 		$message = $this->input->get_post('message');

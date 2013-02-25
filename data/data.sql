@@ -20,7 +20,8 @@ CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_account` (
   `account_lastlogin` INT NOT NULL ,
   PRIMARY KEY (`account_id`) ,
   INDEX `account_name` (`account_name` ASC, `account_pass` ASC) ,
-  INDEX `account_id` (`account_id` ASC, `account_pass` ASC) )
+  INDEX `account_id` (`account_id` ASC, `account_pass` ASC) ,
+  UNIQUE INDEX `account_name2` (`account_name` ASC, `account_department` ASC) )
 ENGINE = InnoDB;
 
 
@@ -51,7 +52,8 @@ CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_pay` (
   `pay_shuiqian` INT NOT NULL ,
   `pay_geshui` INT NOT NULL ,
   `pay_total` INT NOT NULL ,
-  PRIMARY KEY (`date`, `account_id`) )
+  PRIMARY KEY (`date`, `account_id`) ,
+  INDEX `account_name` (`account_name` ASC, `account_department` ASC) )
 ENGINE = InnoDB;
 
 USE `oa_db` ;

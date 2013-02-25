@@ -9,7 +9,8 @@ class Index1 extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('index');
+		$this->load->helper('url');
+		$this->load->view('index1');
 	}
 	
 	public function submit()
@@ -36,8 +37,6 @@ class Index1 extends CI_Controller {
 			$error = $this->upload->display_errors();
 		} else {
  			$data = $this->upload->data();
-// 			$msg = '上传成功！';
-// 			$error = 'null';
 			$fileName = $this->root_path . $uploadDir . '/' . $data['file_name'];
 		}
 		
@@ -56,7 +55,7 @@ class Index1 extends CI_Controller {
 		$this->load->model('account');
 		for($i=0; $i<count($result); $i++)
 		{
-			$result[$i]['date'] = '2013-02-02';
+			$result[$i]['date'] = '2013-02-01';
 			$row = array(
 				'account_name'		=>	$result[$i]['account_name'],
 				'account_department'=>	$result[$i]['account_department']
@@ -70,8 +69,8 @@ class Index1 extends CI_Controller {
 			}
 		}
 		
-		$this->load->model('pay');
-		$this->pay->create($result);
+		$this->load->model('mpay');
+		$this->mpay->create($result);
 	}
 }
 
