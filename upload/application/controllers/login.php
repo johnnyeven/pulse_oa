@@ -30,7 +30,10 @@ class Login extends CI_Controller {
 		}
 		else
 		{
-			$this->load->view($this->pageName);
+			$parameter = array(
+				'redirect'		=>	$redirectUrl
+			);
+			$this->load->view($this->pageName, $parameter);
 		}
 	}
 	
@@ -48,10 +51,20 @@ class Login extends CI_Controller {
 			$this->load->model('utils/logs');
 			$this->load->helper('security');
 			
-			$parameter = array(
-				'account_name'		=>	$accountName,
-				'account_pass'		=>	encrypt_pass($accountPass)
-			);
+			if(is_numeric($accountName) && $accountName != '0')
+			{
+				$parameter = array(
+					'account_number'		=>	intval($accountName),
+					'account_pass'			=>	encrypt_pass($accountPass)
+				);
+			}
+			else
+			{
+				$parameter = array(
+					'account_name'		=>	$accountName,
+					'account_pass'		=>	encrypt_pass($accountPass)
+				);
+			}
 			$result = $this->account->read($parameter);
 			
 			if($result === FALSE)
@@ -124,7 +137,7 @@ class Login extends CI_Controller {
 			'prefix'		=> $this->config->item('cookie_prefix')
 		);
 		delete_cookie($cookie);
- 		showMessage(MESSAGE_TYPE_SUCCESS, 'USER_LOGOUT', '', 'index', true, 5);
+ 		showMessage(MESSAGE_TYPE_SUCCESS, 'USER_LOGOUT', '', 'login', true, 5);
 	}
 }
 ?>

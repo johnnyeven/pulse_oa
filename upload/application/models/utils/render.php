@@ -38,5 +38,27 @@ class Render extends CI_Model
 		);
 		$this->load->view('std_frame', $value);
 	}
+	
+	public function renderAdmin($pageName = null, $data = null)
+	{
+		$this->load->helper('url');
+	
+		$header = $this->load->view('admin/std_header', $data, true);
+		$top = $this->load->view('admin/std_top', $data, true);
+		$nav = $this->load->view('admin/std_nav', $data, true);
+		$content = $this->load->view($pageName, $data, true);
+		$sidebar = $this->load->view('admin/std_sidebar', $data, true);
+		$footer = $this->load->view('admin/std_footer', $data, true);
+	
+		$value = array(
+				'std_header'	=>	$header,
+				'std_top'		=>	$top,
+				'std_nav'		=>	$nav,
+				'std_content'	=>	$content,
+				'std_sidebar'	=>	$sidebar,
+				'std_footer'	=>	$footer
+		);
+		$this->load->view('admin/std_frame', $value);
+	}
 }
 ?>

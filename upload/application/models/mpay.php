@@ -28,24 +28,32 @@ class Mpay extends CI_Model implements ICrud {
 	
 	public function create($row)
 	{
+		$payCount = 0;
 		if(!empty($row))
 		{
 			if(count($row) > 1 && is_array($row[0]))
 			{
 				for($i=0; $i<count($row); $i++)
 				{
-					$this->db->insert($this->accountTable, $row[$i]);
+					if($this->db->insert($this->accountTable, $row[$i]))
+					{
+						$payCount++;
+					}
 				}
-				return true;
+				return $payCount;
 			}
 			else
 			{
-				return $this->db->insert($this->accountTable, $row);
+				if($this->db->insert($this->accountTable, $row))
+				{
+					$payCount++;
+				}
+				return $payCount;
 			}
 		}
 		else
 		{
-			return false;
+			return $payCount;
 		}
 	}
 	

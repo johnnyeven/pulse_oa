@@ -55,7 +55,7 @@ class Index1 extends CI_Controller {
 		$this->load->model('account');
 		for($i=0; $i<count($result); $i++)
 		{
-			$result[$i]['date'] = '2013-02-01';
+			$result[$i]['date'] = '2013-03-01';
 			$row = array(
 				'account_name'		=>	$result[$i]['account_name'],
 				'account_department'=>	$result[$i]['account_department']

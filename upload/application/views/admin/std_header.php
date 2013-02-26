@@ -4,7 +4,7 @@
 		<!-- End of Meta -->
 		
 		<!-- Page title -->
-		<title><?php echo $this->config->item('global_site_name'); ?> - 工作平台 - <?php echo $page_name; ?></title>
+		<title><?php echo $this->config->item('global_site_name'); ?> - 管理后台 - <?php echo $page_name; ?></title>
 		<!-- End of Page title -->
 		
 		<!-- Libraries -->

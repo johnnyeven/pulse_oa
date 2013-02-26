@@ -6,7 +6,7 @@
 		<!-- End of Meta -->
 		
 		<!-- Page title -->
-		<title>Wide Admin - Login</title>
+		<title><?php echo $this->config->item('global_site_name'); ?> - 运作平台 - 登录</title>
 		<!-- End of Page title -->
 		
 		<!-- Libraries -->
@@ -26,6 +26,7 @@
 		<div id="box">
 			<form action="<?php echo site_url("login/submit"); ?>" method="post">
 			<p class="main">
+            	<input type="hidden" id="redirect" name="redirect" value="<?php echo $redirect; ?>" />
 				<label>姓名/工号: </label>
 				<input type="input" name="accountName" id="accountName" /> 
 				<label>密码: </label>
