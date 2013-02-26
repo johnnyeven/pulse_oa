@@ -1,5 +1,11 @@
 <div id="content">
     <div id="main">
+    	<?php if($user->recommand_change_pass != '0'): ?>
+        <div class="message error close">
+            <h2>强烈建议初次登录后，修改登录密码</h2>
+            <p>这样做有什么好处？初始密码安全系数太低。<a href="<?php echo site_url("user/change_password"); ?>">现在就去修改密码！</a></p>
+        </div>
+        <?php endif; ?>
     	<?php if(empty($user->account_number)): ?>
         <div class="message warning close">
             <h2>您还没有绑定工号</h2>

@@ -19,6 +19,7 @@ CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_account` (
   `account_department` CHAR(16) NOT NULL ,
   `account_lastlogin` INT NOT NULL ,
   `account_level` INT NOT NULL DEFAULT 0 ,
+  `recommand_change_pass` TINYINT NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`account_id`) ,
   INDEX `account_name` (`account_name` ASC, `account_pass` ASC) ,
   INDEX `account_number` (`account_pass` ASC, `account_number` ASC) ,
