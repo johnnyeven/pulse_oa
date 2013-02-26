@@ -1,5 +1,11 @@
 <div id="content">
     <div id="main">
+    	<?php if(empty($user->account_number)): ?>
+        <div class="message warning close">
+            <h2>您还没有绑定工号</h2>
+            <p>这样做有什么好处？可以使用工号与密码登录系统。<a href="<?php echo site_url("user/account_number"); ?>">现在就去绑定工号！</a></p>
+        </div>
+        <?php endif; ?>
         <h1>欢迎回来，<span><?php echo $user->account_name; ?></span></h1>
         <p>快速链接</p>
         
@@ -17,14 +23,12 @@
         </div>
     
         <hr />
-                    
+        <!--
         <h1>总览</h1>
         <div class="pad20">
         
-            <!-- Three columns content -->
             <div id="columns" class="sortable">
             
-                <!-- Column one -->
                 <div class="cols2 column">
                     <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
                         <div class="portlet-header">Dummy content 1</div>
@@ -34,9 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- End of Column one -->
                 
-                <!-- Column two -->
                 <div class="cols2 column">
                     <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
                         <div class="portlet-header">Dummy content 2</div>
@@ -56,13 +58,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- End of Column two -->
                 
             </div>
-            <!-- End of Three columns content -->
         </div>
         
         <hr />
-        
+        -->
     </div>
 </div>
