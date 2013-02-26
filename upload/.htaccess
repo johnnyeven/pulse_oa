@@ -1,4 +1,4 @@
 RewriteEngine on
 RewriteBase /pulse_oa/upload/
-RewriteCond $1 !^(index\.php|resources|robot\.txt|api|uc_client|config\.inc\.php)
+RewriteCond $1 !^(index\.php|resources|robot\.txt|install)
 RewriteRule ^(.*)$ index.php/$1 [L]

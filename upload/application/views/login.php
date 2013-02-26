@@ -6,7 +6,7 @@
 		<!-- End of Meta -->
 		
 		<!-- Page title -->
-		<title><?php echo $this->config->item('global_site_name'); ?> - 运作平台 - 登录</title>
+		<title><?php echo $this->config->item('global_site_name'); ?> - 工作平台 - 登录</title>
 		<!-- End of Page title -->
 		
 		<!-- Libraries -->
