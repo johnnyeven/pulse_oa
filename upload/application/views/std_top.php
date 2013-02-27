@@ -10,6 +10,9 @@
 						<p>欢迎回来，<?php echo $user->account_name; ?> <a href="#" title="1 new private message from Elaine!" class="tooltip">1 new message!</a></p>
 						<ul>
 							<li><a href="<?php echo site_url("login/out"); ?>" title="退出" class="tooltip"><span class="ui-icon ui-icon-power"></span>退出</a></li>
+                            <?php if($user->account_level == '999'): ?>
+							<li><a href="<?php echo site_url("admin/index"); ?>" title="进入后台" class="tooltip"><span class="ui-icon ui-icon-locked"></span>进入后台</a></li>
+                            <?php endif; ?>
 							<li><a href="<?php echo site_url("index"); ?>" title="管理首页" class="tooltip"><span class="ui-icon ui-icon-person"></span>管理首页</a></li>
 						</ul>	
 					</div>

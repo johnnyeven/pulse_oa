@@ -58,6 +58,43 @@ CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_pay` (
   INDEX `account_name` (`account_name` ASC, `account_department` ASC) )
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `oa_db`.`platform_timeline`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `oa_db`.`platform_timeline` ;
+
+CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_timeline` (
+  `timeline_id` INT NOT NULL AUTO_INCREMENT ,
+  `account_id` INT NOT NULL ,
+  `timeline_title` CHAR(32) NOT NULL ,
+  `timeline_comment` TEXT NOT NULL ,
+  `timeline_starttime` INT NOT NULL ,
+  `timeline_endtime` INT NOT NULL ,
+  `timeline_status` TINYINT NOT NULL DEFAULT 0 COMMENT '0=未开始\n1=进行中\n2=已完成\n3=已过期' ,
+  PRIMARY KEY (`timeline_id`) ,
+  INDEX `account_id` (`account_id` ASC) ,
+  INDEX `timeline_time` (`timeline_starttime` ASC, `timeline_endtime` ASC) ,
+  INDEX `timeline_status` (`timeline_status` ASC) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `oa_db`.`platform_message`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `oa_db`.`platform_message` ;
+
+CREATE  TABLE IF NOT EXISTS `oa_db`.`platform_message` (
+  `message_id` INT NOT NULL AUTO_INCREMENT ,
+  `message_sender` CHAR(8) NOT NULL ,
+  `message_reveiver` CHAR(8) NOT NULL ,
+  `message_sender_id` INT NOT NULL ,
+  `message_receiver_id` INT NOT NULL ,
+  `message_content` TEXT NOT NULL ,
+  `message_posttime` INT NOT NULL ,
+  PRIMARY KEY (`message_id`) )
+ENGINE = InnoDB;
+
 USE `oa_db` ;
 
 

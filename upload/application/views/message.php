@@ -26,17 +26,6 @@
                         <a href="#" title="Administration Home" class="tooltip"><img src="<?php echo site_url("resources/assets/logo.png"); ?>" alt="Wide Admin" /></a> 
                     </div>
                     <!-- End of Logo -->
-                    
-                    <!-- Meta information -->
-                    <div class="meta">
-                        <p>Welcome, Johnatan Doe! <a href="#" title="1 new private message from Elaine!" class="tooltip">1 new message!</a></p>
-                        <ul>
-                            <li><a href="#" title="End administrator session" class="tooltip"><span class="ui-icon ui-icon-power"></span>Logout</a></li>
-                            <li><a href="#" title="Change current settings" class="tooltip"><span class="ui-icon ui-icon-wrench"></span>Settings</a></li>
-                            <li><a href="#" title="Go to your account" class="tooltip"><span class="ui-icon ui-icon-person"></span>My account</a></li>
-                        </ul>	
-                    </div>
-                    <!-- End of Meta information -->
                 </div>
                 <!-- End of Top-->
             </div>
@@ -50,7 +39,7 @@
                         <div class="pad20" style="margin:0 auto;">
                                 <div class="message <?php if($type==MESSAGE_TYPE_SUCCESS){echo 'success';}else{echo 'error';} ?> close">
                                 <h2>提示信息</h2>
-                                <p><?php echo $info; ?></p>
+                                <p><?php echo lang('message_' . $info); ?></p>
                                 <p><?php echo $message; ?></p>
                                 <p><?php echo $return_content; ?></p>
                             </div>
